@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/chats', 'ChatController@index')->middleware('cors');
+Route::get('/messages', 'ChatController@fetchAllMessages')->middleware('cors');
+Route::post('/messages', 'ChatController@sendMessage')->middleware('cors');
