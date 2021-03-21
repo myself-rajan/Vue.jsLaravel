@@ -107,7 +107,7 @@ export default {
         message: this.newMessage
       })
       console.log('AXIOS : ', axios)
-      axios.get('http://127.0.0.1:8000/messages')
+      axios.get('http://127.0.0.1:8000/api/messages')
         .then(function (response) {
           console.log(response)
         })

@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::get('/chats', 'ChatController@index')->middleware('cors');
+Route::get('/messages', 'ChatController@fetchAllMessages')->middleware('cors');
+Route::post('/messages', 'ChatController@sendMessage')->middleware('cors');
